@@ -1,0 +1,19 @@
+{
+    "name": "cyborg/preinscription",
+    "autoload": {
+        "psr-4": {
+            "Cyborg\\Preinscription\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "lamranii",
+            "email": "Douae.lamrani@emsi-edu.ma"
+        }
+    ],
+    "require": {
+        "phpoffice/phpspreadsheet": "^4.4",
+        "tecnickcom/tcpdf": "^6.10",
+        "vlucas/phpdotenv": "^5.6"
+    }
+}

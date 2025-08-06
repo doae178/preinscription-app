@@ -1,0 +1,28 @@
+# Empêcher l'accès direct aux fichiers PHP
+<Files "*.php">
+    Order Deny,Allow
+    Deny from all
+</Files>
+
+# Autoriser l'accès uniquement depuis les scripts autorisés
+<Files "index.php">
+    Order Allow,Deny
+    Allow from all
+</Files>
+
+# Redirection en cas d'accès non autorisé
+ErrorDocument 403 /error/403.php
+
+# Désactiver l'affichage du contenu des répertoires
+Options -Indexes
+
+# Empêcher l'accès aux fichiers sensibles
+<Files ".env">
+    Order Deny,Allow
+    Deny from all
+</Files>
+
+<Files "*.log">
+    Order Deny,Allow
+    Deny from all
+</Files> 

@@ -1,0 +1,166 @@
+/* ListeEtudiants.css */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  color: #333;
+  line-height: 1.6;
+  min-height: 100vh;
+  padding-bottom: 2rem;
+  background: linear-gradient(135deg, #efeff0, #878bc7);
+  scroll-behavior: smooth; 
+}
+
+h1 {
+    text-align: center;
+    color: #003366;
+    margin-bottom: 30px;
+    font-size: 2rem;
+}
+
+form {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+form input[type="text"] {
+    width: 300px;
+    padding: 10px 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px 0 0 8px;
+    outline: none;
+    transition: all 0.3s ease-in-out;
+}
+
+form input[type="text"]:focus {
+    border-color: #0056b3;
+    box-shadow: 0 0 5px rgba(0, 86, 179, 0.4);
+}
+
+form .btn {
+    padding: 10px 20px;
+    border: none;
+    background-color: #0056b3;
+    color: white;
+    border-radius: 0 8px 8px 0;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+form .btn:hover {
+    background-color: #004a99;
+}
+
+table {
+    width: 90%;
+    max-width: 1000px;
+    margin: auto;
+    border-collapse: collapse;
+    background-color: #fff;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+thead {
+    background-color: #003366;
+    color: #fff;
+    text-align: left;
+}
+
+th, td {
+    padding: 15px 20px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+tr:hover {
+    background-color: #f0f8ff;
+}
+
+.btn {
+    background-color: #0056b3;
+    color: white;
+    padding: 8px 15px;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #6460a6;
+}
+
+td[colspan="3"] {
+    text-align: center;
+    font-style: italic;
+    color: #666;
+}
+
+.btn-supprimer {
+    background-color: #e74c3c;  /* rouge vif */
+    color: white;
+    border: none;
+    padding: 8px 18px;           /* un peu plus large horizontalement */
+    font-size: 15px;             /* un peu plus grand, cohérent avec .btn */
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    outline-offset: 2px;
+}
+
+.btn-supprimer:hover {
+    background-color: #c0392b; 
+}
+
+.btn-supprimer:active {
+    background-color: #a93226; 
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.btn-supprimer:focus {
+    outline: 3px solid #ff7965; /* focus visible et accessible */
+    outline-offset: 2px;
+}
+
+
+@media (max-width: 768px) {
+    table, thead, tbody, th, td, tr {
+        display: block;
+    }
+
+    thead {
+        display: none;
+    }
+
+    tr {
+        margin-bottom: 20px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        border-radius: 8px;
+        background: white;
+        padding: 10px;
+    }
+
+    td {
+        padding: 10px;
+        position: relative;
+    }
+
+    td::before {
+        content: attr(data-label);
+        position: absolute;
+        left: 15px;
+        top: 10px;
+        font-weight: bold;
+        color: #003366;
+    }
+}

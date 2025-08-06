@@ -1,0 +1,190 @@
+
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  color: #333;
+  line-height: 1.6;
+  min-height: 100vh;
+  margin: 0;
+  padding: 40px 20px;
+  background: linear-gradient(135deg, #efeff0, #878bc7);
+  scroll-behavior: smooth;
+  display: block; /* plus de flex */
+}
+
+
+h2 {
+  text-align: center;
+  color: #fff;
+  margin-bottom: 30px;
+  font-weight: 700;
+  font-size: 2.4rem;
+  text-shadow: 0 2px 6px rgba(0,0,0,0.4);
+}
+
+form {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+  padding: 30px 40px;
+  max-width: 650px;
+  width: 100%;
+  transition: box-shadow 0.3s ease;
+}
+
+form:hover {
+  box-shadow: 0 12px 35px rgba(0,0,0,0.25);
+}
+
+label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 600;
+  color: #33475b;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="date"],
+input[type="number"],
+input[type="file"],
+select,
+input[readonly] {
+  width: 100%;
+  padding: 10px 14px;
+  font-size: 1rem;
+  border: 1.8px solid #ccc;
+  border-radius: 8px;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+  outline-offset: 2px;
+  outline-color: transparent;
+  font-family: inherit;
+}
+
+input[type="file"] {
+  padding: 6px 14px;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="date"]:focus,
+input[type="number"]:focus,
+select:focus,
+input[readonly]:focus {
+  border-color: #5a8dee;
+  box-shadow: 0 0 5px #5a8deeaa;
+  outline-color: #5a8dee;
+}
+
+input[readonly] {
+  background-color: #f0f4ff;
+  cursor: not-allowed;
+  color: #64748b;
+}
+
+select:disabled {
+  background-color: #e9ecef;
+  color: #6c757d;
+  cursor: not-allowed;
+}
+
+button#btn-remplir {
+  background-color: #5a8dee;
+  color: white;
+  font-weight: 600;
+  border: none;
+  border-radius: 10px;
+  padding: 12px 24px;
+  cursor: pointer;
+  font-size: 1.1rem;
+  margin-top: 20px;
+  width: 100%;
+  transition: background-color 0.3s ease;
+}
+
+button#btn-remplir:hover {
+  background-color: #3d6edc;
+}
+
+#dossier-fields {
+  margin-top: 30px;
+  border-top: 2px solid #5a8dee;
+  padding-top: 30px;
+  animation: fadeIn 0.5s ease forwards;
+}
+
+.champ {
+  margin-bottom: 20px;
+}
+
+.champ label {
+  margin-bottom: 8px;
+  display: block;
+  color: #2e3a59;
+}
+
+.champ input,
+.champ select {
+  font-size: 1rem;
+  border: 1.5px solid #b0bec5;
+}
+
+.champ input:focus,
+.champ select:focus {
+  border-color: #5a8dee;
+  box-shadow: 0 0 8px #5a8deeaa;
+}
+
+small {
+  display: block;
+  color: #6b7280;
+  font-size: 0.85rem;
+  margin-top: -12px;
+  margin-bottom: 12px;
+  font-style: italic;
+}
+
+button[type="submit"] {
+  background-color: #1e40af;
+  color: white;
+  font-weight: 700;
+  padding: 14px 0;
+  width: 100%;
+  border: none;
+  border-radius: 12px;
+  font-size: 1.25rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+  background-color: #1c3aa9;
+}
+
+
+@media (max-width: 700px) {
+  form {
+    padding: 25px 20px;
+  }
+
+  button#btn-remplir,
+  button[type="submit"] {
+    font-size: 1rem;
+  }
+}
+
+
+.keyboard-container {
+  max-width: 400px;
+  transform: scale(0.85);
+  transform-origin: top left;
+  display: none;
+  margin-top: 10px;
+}
+
