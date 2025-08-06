@@ -1,0 +1,25 @@
+RewriteEngine On
+
+# Rediriger vers index.php si le fichier/dossier n'existe pas
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ index.php [QSA,L]
+
+# Sécurité - Empêcher l'accès aux fichiers sensibles
+<Files ".env">
+    Order Deny,Allow
+    Deny from all
+</Files>
+
+<Files "composer.json">
+    Order Deny,Allow
+    Deny from all
+</Files>
+
+<Files "composer.lock">
+    Order Deny,Allow
+    Deny from all
+</Files>
+
+# Désactiver l'affichage du contenu des répertoires
+Options -Indexes 
