@@ -1,73 +1,82 @@
 # Système de Préinscription
 
-## Configuration de la base de données
-
-### Installation
+## ⚙️ Installation
 
 1. **Cloner le projet**
    ```bash
    git clone [url-du-projet]
    cd preinscription
-   ```
+Installer les dépendances
 
-2. **Installer les dépendances**
-   ```bash
-   composer install
-   ```
+bash
+Copier le code
+composer install
+Configurer la base de données
 
-3. **Configuration de la base de données**
-   
-   **Option 1 : Utiliser le fichier .env (Recommandé)**
-   
-   - Copier le fichier `env.example` vers `.env`
-   ```bash
-   cp env.example .env
-   ```
-   
-   - Modifier le fichier `.env` avec vos informations de base de données :
-   ```env
-   DB_HOST=localhost
-   DB_NAME=preinscription_db
-   DB_USER=votre_utilisateur
-   DB_PASS=votre_mot_de_passe
-   DB_PORT=5432
-   ```
+Option 1 : Utiliser le fichier .env (Recommandé)
 
-   **Option 2 : Configuration manuelle**
-   
-   - Modifier directement le fichier `Includes/config.php` avec vos paramètres
+Copier le fichier env.example vers .env :
 
-### Sécurité
+bash
+Copier le code
+cp env.example .env
+Modifier le fichier .env avec vos informations de base de données :
 
-⚠️ **IMPORTANT** : Le fichier `.env` contient des informations sensibles et ne doit JAMAIS être versionné.
+env
+Copier le code
+DB_HOST=localhost
+DB_NAME=preinscription_db
+DB_USER=postgres
+DB_PASS=votre_mot_de_passe
+DB_PORT=5432
+Option 2 : Configuration manuelle
 
-- Le fichier `.env` est automatiquement exclu du versioning via `.gitignore`
-- Utilisez toujours `env.example` comme modèle pour créer votre `.env`
-- Changez les mots de passe par défaut en production
+Modifier directement Includes/config.php avec vos paramètres.
 
-### Structure des fichiers
+🗄️ Importer la base PostgreSQL
+Créer la base de données (si elle n’existe pas encore) :
 
-```
+bash
+Copier le code
+createdb -U postgres preinscription_db
+Importer le fichier SQL :
+
+bash
+Copier le code
+psql -U postgres -d preinscription_db -f DB/base.sql
+⚠️ Remplacez postgres par votre utilisateur PostgreSQL et entrez le mot de passe quand demandé.
+
+🔒 Sécurité
+Le fichier .env contient des informations sensibles et ne doit JAMAIS être versionné.
+
+.env est déjà ignoré via .gitignore.
+
+Utilisez toujours env.example comme modèle.
+
+Changez les mots de passe par défaut en production.
+
+📂 Structure des fichiers
+bash
+Copier le code
 preinscription/
-├── .env                    # Configuration de la base de données (à créer)
-├── env.example            # Exemple de configuration
-├── .gitignore             # Fichiers exclus du versioning
+├── .env                  # Configuration (à créer)
+├── env.example           # Exemple de config
+├── .gitignore            # Fichiers exclus
 ├── Includes/
-│   ├── db.php            # Connexion à la base de données
-│   ├── config.php        # Configuration alternative
-│   └── .htaccess         # Sécurité du dossier
+│   ├── db.php            # Connexion DB
+│   ├── config.php        # Config alternative
+│   └── .htaccess
 ├── Etudiant/             # Interface étudiant
-├── Admin/                # Interface administrateur
-└── Public/               # Ressources frontend
-```
+├── Admin/                # Interface admin
+├── Public/               # Frontend
+├── DB/
+│   └── base.sql          # Dump PostgreSQL
+📦 Dépendances
+PHP 7.4+
 
-### Dépendances
+PostgreSQL
 
-- PHP 7.4+
-- PostgreSQL
-- Composer
-- vlucas/phpdotenv (installé automatiquement)
+Composer
 
-### Support
+vlucas/phpdotenv
 
-Pour toute question ou problème, contactez l'équipe de développement. 
